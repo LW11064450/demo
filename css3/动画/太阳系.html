@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{margin: 0;padding: 0;}
+        body{
+            background-color: #000;
+            overflow: hidden;
+        }
+        .box{
+            position: relative;
+            width: 500px;
+            height: 500px;
+            margin: 50px auto;
+        }
+        .sun{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            box-shadow: 0px 0px 30px 3px #f6d64b;
+            background-color: #fcc80e;
+            top: 50%;
+            left: 50%;
+            margin: -50px 0 0 -50px;
+        }
+        .small-ring{
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            margin: -150px 0 0 -150px;
+        }
+        /*.small-ring::after{*/
+             /*content: "";*/
+             /*position: absolute;*/
+             /*width: 30px;*/
+             /*height: 30px;*/
+             /*background-color: #6331ff;*/
+             /*border-radius: 50%;*/
+             /*top: 50%;*/
+             /*left: -15px;*/
+             /*margin-top: -15px*/
+         /*}*/
+        .small-ring .moom{
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: #6331ff;
+            border-radius: 50%;
+            top: 50%;
+            left: -15px;
+            margin-top: -15px;
+            /*中心点是以围绕的目标边缘取原点坐标*/
+            /*transform-origin: 30px 5px;*/
+            animation: move 5s linear infinite;
+        }
+        .small-ring .moom::after{
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            border-radius: 50%;
+            top: 50%;
+            left: -10px;
+            margin: -5px 0 0 -5px;
+        }
+        .min-ring{
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            margin: -200px 0 0 -200px;
+            animation: move 8s linear infinite;
+        }
+        .min-ring::after{
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #ffb10e;
+            top: 50%;
+            left: -10px;
+            margin-top: -10px;
+        }
+        .big-ring{
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            margin: -250px 0 0 -250px;
+            animation: move 10s linear infinite;
+        }
+        .big-ring::after{
+            content: "";
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #ff0711;
+            top: 50%;
+            left: -20px;
+            margin-top: -20px;
+        }
+        @keyframes move {
+            0%{
+
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="sun"></div>
+    <div class="small-ring">
+        <div class="moom"></div>
+    </div>
+    <div class="min-ring"></div>
+    <div class="big-ring"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{margin: 0;padding: 0;}
+        .box{
+            width: 400px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            margin: 50px auto;
+            font-size: 60px;
+            font-family: "Microsoft YaHei";
+        }
+        .box span{
+            position: relative;
+            color: #000;
+        }
+        .box span::before,
+        .box span::after{
+            content: attr(data-text);
+            position: absolute;
+            transform-origin: left;
+            left: 0;
+            transition: all 1s;
+        }
+        .box span::before{
+            z-index: 3;
+            color: #fff;
+            transform: scaleX(0.95);
+        }
+        .box span::after{
+            z-index: 2;
+            color: rgba(0,0,0, .3);
+        }
+        .box:hover span::before{
+            transform: rotateY(-35deg) skew(0,5deg);
+        }
+        .box:hover span::after{
+            transform: skew(0,20deg);
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <span data-text="传">传</span>
+    <span data-text="智">智</span>
+    <span data-text="播">播</span>
+    <span data-text="客">客</span>
+</div>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        html,body,.box{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .box{
+            position: relative;
+        }
+        .pics{
+            position: relative;
+            list-style-type: none;
+            width: 100%;
+            height: 100%;
+        }
+        .pics li{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-size: cover;
+        }
+        .pics li:nth-child(1){
+            background-image: url("images/bg1.jpg");
+            z-index: 3;
+        }
+        .pics li:nth-child(2){
+            background-image: url("images/bg2.jpg");
+            z-index: 2;
+        }
+        .pics li:nth-child(3){
+            background-image: url("images/bg3.jpg");
+            z-index: 1;
+        }
+        .btn{
+            position: absolute;
+            bottom: 100px;
+            width: 360px;
+
+            left: 50%;
+            margin-left: -180px;
+            z-index: 99;
+        }
+        .btn li{
+            float: left;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            font-size: 50px;
+            border-radius: 50%;
+            margin: 0 10px;
+            background-color: #ffcf47;
+        }
+        .btn li a{
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            color: #000;
+        }
+        #pic1:target{
+            z-index: 3;
+            animation: slide 1s linear;
+        }
+        #pic2:target{
+            z-index: 3;
+            animation: scale 1s linear;
+        }
+        #pic3:target{
+            z-index: 3;
+            animation: rotate 1s linear;
+        }
+        @keyframes slide {
+            0%{
+                transform: translateX(-100%);
+            }
+            100%{
+                transform: translateX(0);
+            }
+        }
+        @keyframes scale {
+            0%{
+                transform: scale(0);
+            }
+            100%{
+                transform: scale(1);
+            }
+        }
+        @keyframes rotate {
+            0%{
+                transform: scale(0) rotate(0deg);
+            }
+            100%{
+                transform: scale(1) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <ul class="pics">
+        <li id="pic1"></li>
+        <li id="pic2"></li>
+        <li id="pic3"></li>
+    </ul>
+    <ul class="btn">
+        <li><a href="#pic1">1</a></li>
+        <li><a href="#pic2">2</a></li>
+        <li><a href="#pic3">3</a></li>
+    </ul>
+</div>
+</body>
+</html>

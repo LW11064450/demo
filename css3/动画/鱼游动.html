@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{margin: 0;padding: 0;}
+        body{
+            background-color: #9ab7f2;
+            overflow: hidden;
+        }
+        .shark{
+            transform: translateX(-509px);
+            width: 509px;
+            height: 258px;
+            animation: run 20s linear infinite;
+        }
+        .shark1{
+            width: 509px;
+            height: 258px;
+            background: url("images/shark1.png") no-repeat 0 0;
+            animation: move 1s  steps(8)  infinite;
+        }
+        .fish{
+            width: 174px;
+            height: 124px;
+            position: absolute;
+            top: 35px;
+            left: 100px;
+            animation: run2 16s linear infinite;
+        }
+        .fish1{
+            width: 174px;
+            height: 124px;
+            background: url("images/fish8.png") no-repeat 0 0;
+            animation: move2 0.8s steps(8) infinite;
+        }
+        @keyframes run {
+            0%{
+
+            }
+            100%{
+                transform: translateX(1800px);
+            }
+        }
+        @keyframes run2 {
+            0%{}
+            25%{
+                transform: translate(600px) rotate(45deg);
+            }
+            50%{
+                transform: translate(600px,350px) rotate(135deg);
+            }
+            75%{
+                transform: translate(50px,300px) rotate(235deg);
+            }
+            100%{
+                transform: translate(0,0) rotate(360deg);
+            }
+
+        }
+        @keyframes move {
+            0% {
+
+            }
+            100% {
+                background-position: 0 -2160px;
+            }
+        }
+        @keyframes move2 {
+            0%{
+
+        }
+            100%{
+                background-position: 0 -1008px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="shark">
+    <div class="shark1"></div>
+</div>
+<div class="fish">
+    <div class="fish1"></div>
+</div>
+</body>
+</html>
